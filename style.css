@@ -593,9 +593,9 @@ form .input input{
 
     @media screen and (max-width:800px) and (min-width:680px){
         .home{
-            height: 80vh;
+            height: 100vh;
         }
         .about{
-            height: 80vh;
+            height: 100vh;
         }
     }
