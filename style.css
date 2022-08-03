@@ -18,6 +18,15 @@ body{
     color: black;
     background-color: #fff;
 }
+.menu i{
+    font-size: 30px;
+    color:black;
+    cursor: pointer;
+}
+.menu{
+    display: none;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -41,7 +50,8 @@ header .nav-bar a{
     letter-spacing: .5px;
     transition: .2s;
 }
-header .nav-bar a:hover{
+header .nav-bar a:hover,
+header .nav-bar .active{
     color: var(--main-color);
     transition: .2s;
 }
@@ -52,16 +62,13 @@ section{
 .home{
     height: 80vh;
    display: grid;
-   grid-template-columns: 2fr 2fr;
+   grid-template-columns: repeat(auto-fit,minmax(300px,auto));
    align-items: center;
-   grid-gap: 15rem;
+   grid-gap: 5rem;
    border-bottom: 2px solid whitesmoke; 
 }
  .social{
-    position: absolute;
-    text-align: center;
-    transform: translate(840px,700px);
-    transition: .40s;   
+    margin-top: 170%;
 }
 .social i{
     padding: 10px;
@@ -171,6 +178,7 @@ margin-bottom: 50px;
     color: var(--main-color);
     transition: .2s;
 }
+
 .sticky{
     background-color: #fff;
     border-bottom: 2px solid whitesmoke;
@@ -303,7 +311,9 @@ margin-bottom: 50px;
     transition: .2s;
 }
 .project-container .project-box .con i:hover{
-    color: var(--main-color);
+    color: white;
+    background-color: var(--main-color);
+    transform: rotate(360deg);
     transition: .2s;
 }
 
@@ -355,13 +365,13 @@ form .input input{
         transform: translateX(220px);
     }
     .contact-con .contact-sub i{
-margin: 20px 0;
-padding: 15px;
-font-size: 20px;
-background-color: var(--main-color);
-color: white;
-border-radius: 50%;
-transition: .4s;
+            margin: 20px 0;
+            padding: 15px;
+            font-size: 20px;
+            background-color: var(--main-color);
+            color: white;
+            border-radius: 50%;
+            transition: .4s;
     }
     .contact-con .contact-sub i:hover{
         transform: rotate(360deg);
@@ -373,8 +383,186 @@ transition: .4s;
 
     footer{
         text-align: center;
-        padding: 10px 0;
+        padding: 10px 10px;
     }
   footer .footer-name{
         color: var(--main-color);
+    }
+
+    @media screen and (max-width:1680px) {
+      .home{
+        grid-gap: 2rem;
+      }
+    }
+    @media screen and (max-width:1523px){
+        section{
+            padding: 80px 5%;
+        }
+        header{
+            padding: 5px 5%;
+        }
+        .social{
+            margin-top: 150%;
+        }
+        .nav-bar{
+            position: absolute;
+            top: 72px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            background-color: whitesmoke;
+            height: 95vh;
+            transform: translateX(-100%);
+            transition: .2s;
+        }
+        .nav-active{
+            transform: translateX(0%);
+            transition: .2s;
+        }
+        .menu{
+            display: block;
+        }
+        .menu-anime{
+            transform: rotate(360deg);
+            transition: .4s;
+        }
+    }
+    @media screen and (max-width:1200px){
+     
+        .contact .contact-con{
+            display: grid;
+            grid-template-columns: repeat(2,2fr);
+            align-items: center;
+            grid-gap: 2rem;
+        }
+        .contact-con .linee{
+            display: none;
+        }
+    
+    }
+    @media screen and (max-width:1850px){
+        .test-box .first{
+            letter-spacing: .3px;
+            color: var(--light-color);
+            padding: 30px;
+        }
+    }
+    @media screen and (max-width:1090px){
+       .home .social{
+        display: none;
+       }
+       .home{
+        grid-gap: 10rem;
+        padding-bottom: 50px;
+       }
+       
+    }
+    @media screen and (max-width:990px){
+        form{
+            transform: translateX(0px);
+        }  
+        .contact-con .contact-sub p{
+           display: inline-block;
+        }
+    }
+    @media screen and (max-width:935px){
+        .contact .contact-con{
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            grid-gap: 2rem;
+        }
+    
+        
+    }
+    @media screen and (max-width:900px){
+        .contact-con .contact-sub{
+            display: flex;
+            flex-direction: column;
+    }
+    
+    }
+    @media screen and (max-width:460px){
+        .contact-con .contact-sub p .co{
+            font-size: 11px;
+        }
+    }
+    @media screen and (max-width:870px){
+.home{
+    grid-template-columns: 1fr;
+    height: 100vh;
+    grid-gap: 2rem;
+}
+.home-text{
+    text-align: center;
+}
+.home-img {
+    text-align: center;
+}
+.home .home-img img{
+    max-width: 100%;
+    height: auto;
+    width: 350px;
+}
+.home .home-text h1{
+    font-size: 50px;
+}
+
+.about{
+    grid-template-columns: 1fr;
+    height: 120vh;
+    grid-gap: 1rem;
+}
+.about-text{
+    text-align: center;
+}
+.about .about-text .line{
+    display: none;
+}
+.about-img {
+    text-align: center;
+}
+.about .about-img img{
+    max-width: 100%;
+    height: auto;
+    width: 400px;
+}
+.about .about-text h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+}
+    @media screen and (max-width:869px){
+        .project-container{
+            grid-template-columns: 1fr;
+            align-items: center;
+            grid-gap: 3rem;
+            text-align: center;
+        }
+        .home{
+            height: 120vh;
+        }
+        .about{
+            height: 120vh;
+        }
+    }
+    @media screen and (max-width:820px) and  (min-width:800px){
+        .home{
+            height: 80vh;
+          
+        }
+        .about{
+            height: 80vh;
+        }
+    }
+    @media screen and (max-width:500px) and (min-width:390px){
+        .home{
+            height: 80vh;
+        }
+        .about{
+            height: 80vh;
+        }
     }
