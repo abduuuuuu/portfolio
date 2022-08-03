@@ -85,6 +85,21 @@ section{
     transition: .2s;
     color: #fff;
 }
+.sociall{
+    display: none;
+    text-align: center;
+}
+.sociall i{
+    margin: 0 10px;
+    color:var(--light-color);
+    transition: .2s;
+    font-size: 23px;
+}
+.sociall i:hover{
+    transform: rotate(360deg);
+    transition: .2s;
+    color: var(--main-color);
+}
 .home .home-text h4{
     color:var(--light-color);
     font-size: 20px;
@@ -382,8 +397,8 @@ form .input input{
     }
 
     footer{
+        padding: 10px 18%;
         text-align: center;
-        padding: 10px 10px;
     }
   footer .footer-name{
         color: var(--main-color);
@@ -453,6 +468,15 @@ form .input input{
     @media screen and (max-width:1090px){
        .home .social{
         display: none;
+       }
+       footer .sociall{
+        display: block;
+       }
+       footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 1px;
        }
        .home{
         grid-gap: 10rem;
@@ -559,6 +583,15 @@ form .input input{
         }
     }
     @media screen and (max-width:500px) and (min-width:390px){
+        .home{
+            height: 80vh;
+        }
+        .about{
+            height: 80vh;
+        }
+    }
+
+    @media screen and (max-width:800px) and (min-width:680px){
         .home{
             height: 80vh;
         }
